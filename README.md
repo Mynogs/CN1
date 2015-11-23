@@ -6,7 +6,7 @@ Project settings:
 Modify file:
   C:\Users\User\AppData\Local\Rowley Associates Limited\CrossWorks for ARM\packages\targets\SAM\CMSIS\Device\ATMEL\sam4s\source\system_sam4s.c
 at line 49:
-
+```C
 / * Clock settings (120MHz) * /
 // AR
 #if CHIP_FREQ_XTAL == 12000000UL
@@ -20,3 +20,4 @@ at line 49:
 #else
   #error Unknow crital frequency
 #endif
+```
