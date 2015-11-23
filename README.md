@@ -1,5 +1,6 @@
 # CN1
 IDE: CrossStudio for ARM 2.3 "http://www.rowley.co.uk/arm/"
+
 Project settings:
  To use Segger J-Link set path to JLinkARM.dll
 
