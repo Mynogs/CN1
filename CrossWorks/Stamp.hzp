@@ -1,0 +1,169 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="Stamp" target="8" version="2">
+  <project Name="Stamp">
+    <configuration Name="Common" Target="SAM4SA16B" arm_architecture="v7EM" arm_core_type="Cortex-M4" arm_fpu_type="FPv4-SP-D16" arm_gcc_target="arm-unknown-eabi" arm_interwork="No" arm_linker_process_stack_size="0" arm_linker_stack_size="35000" arm_simulator_memory_simulation_filename="$(TargetsDir)/SAM/SAMSimulatorMemory.dll" arm_simulator_memory_simulation_parameter="SAM4S;0x100000;0x0;0x28000;0x0000;0;0;0;0" arm_target_debug_interface_type="ADIv5" c_preprocessor_definitions="USE_PROCESS_STACK" c_user_include_directories="$(TargetsDir)/SAM/CMSIS/Device/ATMEL;$(TargetsDir)/SAM/CMSIS/Device/ATMEL/$(SAM_Series)/include;$(TargetsDir)/CMSIS_3/CMSIS/Include;$(TargetsDir)/SAM" link_include_startup_code="No" linker_memory_map_file="$(TargetsDir)/SAM/SAM4SA16B_MemoryMap.xml" linker_scanf_fp_enabled="Yes" macros="SAM_Series=sam4s" package_dependencies="SAM" project_directory="" project_type="Executable" property_groups_file_path="$(TargetsDir)/SAM/propertyGroups.xml" target_get_partname_script="GetPartName()" target_match_partname_script="MatchPartName(&quot;$(Target)&quot;)" target_reset_script="SAM4S_Reset()"/>
+    <configuration Name="Flash" Placement="Flash" arm_target_flash_loader_file_path="$(TargetsDir)/SAM/Release/Loader_$(SAM_Series).elf" arm_target_flash_loader_type="LIBMEM RPC Loader" linker_section_placement_file="$(TargetsDir)/SAM/flash_placement.xml"/>
+    <folder Name="Source Files" file_name="">
+      <configuration Name="Common" filter="c;cpp;cxx;cc;h;s;asm;inc"/>
+      <file file_name="main.c">
+        <configuration Name="Common" file_flag="Dark Orange"/>
+      </file>
+      <folder Name="HAL" file_name="">
+        <file file_name="HAL/HAL.c"/>
+        <file file_name="HAL/HALW5500.c"/>
+        <file file_name="HAL/HALLIS.c"/>
+        <file file_name="HAL/HALHSMCI.c"/>
+        <file file_name="HAL/HALGYRDisplay.c"/>
+      </folder>
+      <folder Name="Wiznet" file_name="">
+        <folder Name="Ethernet">
+          <folder Name="W5500">
+            <file file_name="Wiznet/Ethernet/W5500/w5500.c"/>
+          </folder>
+          <file file_name="Wiznet/Ethernet/socket.c"/>
+          <file file_name="Wiznet/Ethernet/wizchip_conf.c"/>
+        </folder>
+        <folder Name="Internet">
+          <folder Name="DHCP">
+            <file file_name="Wiznet/Internet/DHCP/dhcp.c"/>
+          </folder>
+          <folder Name="DNS">
+            <file file_name="Wiznet/Internet/DNS/dns.c"/>
+          </folder>
+        </folder>
+        <file file_name="Wiznet/ZeroConf.c"/>
+      </folder>
+      <file file_name="Memory.c"/>
+      <file file_name="TFTPBoot.c"/>
+      <file file_name="SysLog.c"/>
+      <file file_name="ATSHA204.c"/>
+      <folder Name="LuaLibs" file_name="">
+        <file file_name="LuaLibs/LuaLibPin.c"/>
+        <file file_name="LuaLibs/LuaLibUtils.c"/>
+        <file file_name="LuaLibs/LuaLibSerial.c"/>
+        <file file_name="LuaLibs/LuaLibSys.c"/>
+        <file file_name="LuaLibs/LuaLibWS2812.c"/>
+        <file file_name="LuaLibs/LuaLibW5500.c"/>
+        <file file_name="LuaLibs/LuaLibSPI.c"/>
+        <file file_name="LuaLibs/LuaLibLIS.c"/>
+        <file file_name="LuaLibs/LuaLibBASE64.c"/>
+        <file file_name="LuaLibs/LuaLibI2C.c"/>
+        <file file_name="LuaLibs/LuaLibEVE.c"/>
+        <file file_name="LuaLibs/LuaLibGYRDisplay.c"/>
+        <file file_name="LuaLibs/LuaLibJSON.c"/>
+        <file file_name="LuaLibs/LuaLibSoftPWM.c"/>
+        <file file_name="LuaLibs/LuaLibADC.c"/>
+        <file file_name="LuaLibs/LuaLibSoftCounter.c"/>
+      </folder>
+      <folder Name="cn-2.0.0" file_name="">
+        <file file_name="cn-2.0.0/src/cn.c"/>
+      </folder>
+      <file file_name="Modifyer.c"/>
+      <folder Name="SHA204" file_name="">
+        <file file_name="SHA204/src/sha204_comm.c"/>
+        <file file_name="SHA204/src/sha204_comm_marshaling.c"/>
+        <file file_name="SHA204/src/sha204_example_main.c"/>
+        <file file_name="SHA204/src/sha204_examples.c"/>
+        <file file_name="SHA204/src/sha204_helper.c"/>
+        <file file_name="SHA204/src/sha204_swi.c"/>
+        <file file_name="SHA204/src/timer_utilities.c"/>
+        <file file_name="SHA204/src/uart_phys.c"/>
+        <file file_name="SHA204/src/sha204_config.h"/>
+      </folder>
+      <folder Name="WS2812" file_name="">
+        <file file_name="WS2812/WS2812.c"/>
+      </folder>
+      <folder Name="FatFs-0-10-c" file_name="">
+        <file file_name="FatFs-0-10-c/src/diskio.c"/>
+        <file file_name="FatFs-0-10-c/src/ff.c"/>
+        <file file_name="FatFs-0-10-c/src/option/unicode.c"/>
+      </folder>
+      <file file_name="FatFsWrapper.c"/>
+      <folder Name="EVE" file_name="">
+        <file file_name="EVE/EVE.c"/>
+      </folder>
+      <file file_name="FFS.c"/>
+      <folder Name="Lua-5.3.0" file_name="">
+        <file file_name="lua-5.3.0/src/lapi.c"/>
+        <file file_name="lua-5.3.0/src/lauxlib.c"/>
+        <file file_name="lua-5.3.0/src/lbaselib.c"/>
+        <file file_name="lua-5.3.0/src/lbitlib.c"/>
+        <file file_name="lua-5.3.0/src/lcode.c"/>
+        <file file_name="lua-5.3.0/src/lcorolib.c"/>
+        <file file_name="lua-5.3.0/src/lctype.c"/>
+        <file file_name="lua-5.3.0/src/ldblib.c"/>
+        <file file_name="lua-5.3.0/src/ldebug.c"/>
+        <file file_name="lua-5.3.0/src/ldo.c"/>
+        <file file_name="lua-5.3.0/src/ldump.c"/>
+        <file file_name="lua-5.3.0/src/lfunc.c"/>
+        <file file_name="lua-5.3.0/src/lgc.c"/>
+        <file file_name="lua-5.3.0/src/linit.c"/>
+        <file file_name="lua-5.3.0/src/liolib.c"/>
+        <file file_name="lua-5.3.0/src/llex.c"/>
+        <file file_name="lua-5.3.0/src/lmathlib.c"/>
+        <file file_name="lua-5.3.0/src/lmem.c"/>
+        <file file_name="lua-5.3.0/src/loadlib.c"/>
+        <file file_name="lua-5.3.0/src/lobject.c"/>
+        <file file_name="lua-5.3.0/src/lopcodes.c"/>
+        <file file_name="lua-5.3.0/src/loslib.c"/>
+        <file file_name="lua-5.3.0/src/lparser.c"/>
+        <file file_name="lua-5.3.0/src/lstate.c"/>
+        <file file_name="lua-5.3.0/src/lstring.c"/>
+        <file file_name="lua-5.3.0/src/lstrlib.c"/>
+        <file file_name="lua-5.3.0/src/ltable.c"/>
+        <file file_name="lua-5.3.0/src/ltablib.c"/>
+        <file file_name="lua-5.3.0/src/ltm.c"/>
+        <file file_name="lua-5.3.0/src/lundump.c"/>
+        <file file_name="lua-5.3.0/src/lutf8lib.c"/>
+        <file file_name="lua-5.3.0/src/lvm.c"/>
+        <file file_name="lua-5.3.0/src/lzio.c"/>
+        <configuration Name="Common" build_exclude_from_build="No"/>
+      </folder>
+      <file file_name="HAL/HALGYRDisplay.h"/>
+      <folder Name="lua_cjson-2.1.0" file_name="">
+        <file file_name="lua-cjson-2.1.0/dtoa.c">
+          <configuration Name="THUMB Flash Release 160k" build_exclude_from_build="Yes"/>
+          <configuration Name="THUMB Flash Debug 160k" build_exclude_from_build="Yes"/>
+        </file>
+        <file file_name="lua-cjson-2.1.0/g_fmt.c">
+          <configuration Name="THUMB Flash Release 160k" build_exclude_from_build="Yes"/>
+          <configuration Name="THUMB Flash Debug 160k" build_exclude_from_build="Yes"/>
+        </file>
+        <file file_name="lua-cjson-2.1.0/lua_cjson.c"/>
+        <file file_name="lua-cjson-2.1.0/strbuf.c"/>
+        <file file_name="lua-cjson-2.1.0/fpconv.c">
+          <configuration Name="THUMB Flash Debug 128k" build_exclude_from_build="Yes"/>
+          <configuration Name="THUMB Flash Release 160k" build_exclude_from_build="No"/>
+        </file>
+      </folder>
+      <file file_name="_History.txt">
+        <configuration Name="Common" file_flag="Green"/>
+      </file>
+    </folder>
+    <folder Name="System Files">
+      <file file_name="$(StudioDir)/source/thumb_crt0.s"/>
+      <file file_name="$(TargetsDir)/SAM/SAM_Startup.s"/>
+      <file file_name="$(TargetsDir)/SAM/SAM_Target.js">
+        <configuration Name="Common" file_type="Reset Script"/>
+      </file>
+    </folder>
+    <folder Name="CMSIS Files">
+      <file file_name="$(TargetsDir)/SAM/system_sam.c"/>
+    </folder>
+    <folder Name="FlashDiskFiles" exclude="" filter="" path="FlashDisk" recurse="Yes"/>
+    <configuration Name="THUMB Flash Release 160k" c_preprocessor_definitions="INITIALIZE_STACK"/>
+    <configuration Name="128k" Target="SAM4S16B" arm_architecture="v7EM" arm_core_type="Cortex-M4" arm_fpu_type="FPv4-SP-D16" arm_simulator_memory_simulation_parameter="SAM4S;0x100000;0x0;0x20000;0x0000;0;0;0;0" linker_memory_map_file="$(TargetsDir)/SAM/SAM4S16B_MemoryMap.xml" macros="SAM_Series=sam4s" target_reset_script="SAM4S_Reset()"/>
+    <configuration Name="160k" Target="SAM4SA16B" arm_architecture="v7EM" arm_core_type="Cortex-M4" arm_fpu_type="FPv4-SP-D16" arm_simulator_memory_simulation_parameter="SAM4S;0x100000;0x0;0x28000;0x0000;0;0;0;0" linker_memory_map_file="$(TargetsDir)/SAM/SAM4SA16B_MemoryMap.xml" macros="SAM_Series=sam4s" target_reset_script="SAM4S_Reset()"/>
+  </project>
+  <configuration Name="THUMB" Platform="ARM" arm_instruction_set="THUMB" arm_library_instruction_set="THUMB" c_preprocessor_definitions="__THUMB" hidden="Yes"/>
+  <configuration Name="Debug" build_debug_information="Yes" c_preprocessor_definitions="DEBUG" gcc_optimization_level="None" hidden="Yes" link_include_startup_code="No"/>
+  <configuration Name="Release" build_debug_information="No" c_preprocessor_definitions="NDEBUG;STARTUP_FROM_RESET" gcc_optimization_level="None" hidden="Yes" link_include_startup_code="No" linker_output_format="bin"/>
+  <configuration Name="THUMB Flash Debug 160k" arm_linker_heap_size="120000" c_preprocessor_definitions="NO_WATCHDOG_DISABLE" inherited_configurations="160k;Debug;Flash;THUMB"/>
+  <configuration Name="Flash" c_preprocessor_definitions="__FLASH_BUILD" hidden="Yes"/>
+  <configuration Name="THUMB Flash Release 160k" arm_linker_heap_size="120000" c_preprocessor_definitions="NO_WATCHDOG_DISABLE" inherited_configurations="160k;Flash;Release;THUMB"/>
+  <configuration Name="Common" arm_linker_stack_size="25000" c_preprocessor_definitions="CHIP_FREQ_XTAL=16000000L;INITIALIZE_STACK" c_user_include_directories=".;./Wiznet;./Wiznet/Ethernet" linker_printf_fp_enabled="Yes" linker_scanf_fp_enabled="Yes"/>
+  <configuration Name="THUMB Flash Debug 128k" arm_linker_heap_size="90000" inherited_configurations="128k;Debug;Flash;THUMB"/>
+  <configuration Name="128k" hidden="true"/>
+  <configuration Name="160k" hidden="true"/>
+  <configuration Name="THUMB Flash Release 128k" arm_linker_heap_size="100000" inherited_configurations="128k;Flash;Release;THUMB"/>
+</solution>
